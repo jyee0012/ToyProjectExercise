@@ -14,11 +14,13 @@ public class Scr_PlayerController : MonoBehaviour
     [SerializeField]
     private float speed, jumpForce;
     [SerializeField]
-    private const int maxHP = 5;
+    private int maxHP;
     private int health;
     private float vinput;
     private string vinputString;
     private KeyCode jump;
+    [SerializeField]
+    private bool grounded;
     // Use this for initialization
     void Start()
     {
@@ -35,6 +37,8 @@ public class Scr_PlayerController : MonoBehaviour
             default:
                 break;
         }
+        health = maxHP;
+        grounded = true;
     }
 
     // Update is called once per frame
@@ -42,6 +46,11 @@ public class Scr_PlayerController : MonoBehaviour
     {
         vinput = Input.GetAxis(vinputString);
         transform.Translate(vinput * Time.deltaTime * speed, 0, 0);
+        if (Input.GetKeyDown(jump) && grounded)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            grounded = false;
+        }
     }
 
     public int GetPlayer()
@@ -64,5 +73,13 @@ public class Scr_PlayerController : MonoBehaviour
     public void TakeDamage(int num)
     {
         health -= num;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.transform.name);
+        if (collision.transform.name == "Floor")
+        {
+            grounded = true;
+        }
     }
 }
