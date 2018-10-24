@@ -6,16 +6,18 @@ public class FallingObject : MonoBehaviour
 {
 
     [SerializeField]
-    bool isBad = false, useCustomGravity = false;
+    bool isBad = false, // if is bad then it will do damage
+        useCustomGravity = false; // will use basic translate instead of gravity
     [SerializeField]
     int scoreAmount = 100, objDamage = 1;
     [SerializeField]
-    float fallSpeed = 2;
+    float fallSpeed = 2; // fall speed
 
-    float defaultFallSpeed = 2;
+    float defaultFallSpeed = 2; // default fall speed
     // Use this for initialization
     void Start()
     {
+        // will attempt to use a rigidbody2d if there is one attached to the gameobject
         if (GetComponent<Rigidbody2D>() != null)
         {
             GetComponent<Rigidbody2D>().gravityScale = fallSpeed;
@@ -30,15 +32,19 @@ public class FallingObject : MonoBehaviour
             transform.Translate(new Vector3(0, fallSpeed, 0) * Time.deltaTime);
         }
     }
+    // adds points based on player, player num is required while there is a default score amount provided
     void GivePoints(int playerNum, int score = 100)
     {
+        
         if (playerNum == 1)
         {
-            ScoreAndTimer.p1Score += score;
+            //ScoreAndTimer.p1Score += score;
+            ScoreAndTimer.AddScore(playerNum);
         }
         else if( playerNum == 2)
         {
-            ScoreAndTimer.p2Score += score;
+            //ScoreAndTimer.p2Score += score;
+            ScoreAndTimer.AddScore(playerNum);
         }
     }
     private void OnCollisionEnter(Collision collision)
