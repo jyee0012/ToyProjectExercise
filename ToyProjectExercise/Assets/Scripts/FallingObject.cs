@@ -34,11 +34,11 @@ public class FallingObject : MonoBehaviour
     {
         if (playerNum == 1)
         {
-            ScoreAndTimer.p1Score += score;
+            ScoreStatics.p1Score += score;
         }
         else if( playerNum == 2)
         {
-            ScoreAndTimer.p2Score += score;
+            ScoreStatics.p2Score += score;
         }
     }
     private void OnCollisionEnter(Collision collision)

@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/TESTSCENEFORJANNIK.unity
-=======
-- path: Assets/Scenes/Menu Exercise.unity
->>>>>>> 6412e5143a8ecc92db98456c8c06543baadfe5e2
   isLoaded: 1
   isActive: 1
