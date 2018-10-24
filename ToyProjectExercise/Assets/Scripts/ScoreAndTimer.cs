@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class ScoreAndTimer : MonoBehaviour {
     //Attach to Game Scene
-    public static int p1Score;
-    public static int p2Score;
-    public static int currP1;
-    public static int currP2;
+    int currP1;
+    int currP2;
     public static bool p2Active;
 
     [SerializeField]
@@ -23,7 +21,7 @@ public class ScoreAndTimer : MonoBehaviour {
 
     void Start () {
         currP1 = 0;//first time setup of p1Score. Use if p1Score == -1 to check if a game has been played or not.
-        if (p2Active) currP2 = 0;
+        if (ScoreStatics.p2Active) currP2 = 0;
         else currP2 = -1;
         timer = 60.0f;
     }
@@ -31,8 +29,8 @@ public class ScoreAndTimer : MonoBehaviour {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            p1Score = currP1;
-            p2Score = currP2;
+            ScoreStatics.p1Score = currP1;
+            ScoreStatics.p2Score = currP2;
             SceneManager.LoadScene("GameOverScene");//Replace GameOverScene with name of scene that displays results.
         }
         p1ScoreText.GetComponent<Text>().text = "Player 1 Score\n" + currP1.ToString();
@@ -42,7 +40,7 @@ public class ScoreAndTimer : MonoBehaviour {
     }
 
 
-    public static void AddScore(int player)
+    public void AddScore(int player)
     {
         if (player == 1) currP1 += 100;
         else currP2 += 100;

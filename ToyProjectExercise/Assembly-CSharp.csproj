@@ -53,9 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\ScoreAndTimer.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
+=======
+     <Compile Include="Assets\Scripts\FallingObject.cs" />
+     <Compile Include="Assets\Scripts\ScoreAndTimer.cs" />
+     <Compile Include="Assets\Scripts\ScoreStatics.cs" />
+     <Compile Include="Assets\Scripts\Scr_PlayerController.cs" />
+>>>>>>> 0a4bd5c7547ebe161816e3cf9d336519aa393a7b
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/wsantos1/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
