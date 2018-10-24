@@ -2,30 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreAndTimer : MonoBehaviour {
     //Attach to Game Scene
     public static int p1Score;
     public static int p2Score;
+    public static int currP1;
+    public static int currP2;
+    public static bool p2Active;
+
+    [SerializeField]
+    GameObject timeText;
+    [SerializeField]
+    GameObject p1ScoreText;
+    [SerializeField]
+    GameObject p2ScoreText;
+
     public float timer;
 
     void Start () {
-        p1Score = 0;//first time setup of p1Score. Use if p1Score == -1 to check if a game has been played or not.
-        p2Score = 0;
+        currP1 = 0;//first time setup of p1Score. Use if p1Score == -1 to check if a game has been played or not.
+        if (p2Active) currP2 = 0;
+        else currP2 = -1;
         timer = 60.0f;
     }
 	void Update () {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            p1Score = currP1;
+            p2Score = currP2;
             SceneManager.LoadScene("GameOverScene");//Replace GameOverScene with name of scene that displays results.
         }
-	}
+        p1ScoreText.GetComponent<Text>().text = "Player 1 Score\n" + currP1.ToString();
+        if (p2Active) p2ScoreText.GetComponent<Text>().text = "Player 2 Score\n" + currP2.ToString();
+        else p2ScoreText.SetActive(false);
+        timeText.GetComponent<Text>().text = "Time remaining\n" + ((int)timer).ToString();
+    }
 
 
     public static void AddScore(int player)
     {
-        if (player == 1) p1Score += 100;
-        else p2Score += 100;
+        if (player == 1) currP1 += 100;
+        else currP2 += 100;
     }
 }
