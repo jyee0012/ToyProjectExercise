@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a0b03604be2fe39428b904e5a7dd5ffd
+timeCreated: 1538253212
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: OrangeBlossoms
+  fontNames:
+  - OrangeBlossoms
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
