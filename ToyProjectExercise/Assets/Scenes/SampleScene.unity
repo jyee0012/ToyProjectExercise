@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 38263945}
   - component: {fileID: 38263944}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Player1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Player 1 Score
+
+    0'
 --- !u!222 &38263945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -327,7 +329,7 @@ GameObject:
   - component: {fileID: 520891639}
   - component: {fileID: 520891638}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Player2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,7 +385,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Player 2 Score
+
+    0'
 --- !u!222 &520891639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -495,7 +499,7 @@ GameObject:
   - component: {fileID: 666273835}
   - component: {fileID: 666273834}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +555,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Time Remaining
+
+    60'
 --- !u!222 &666273835
 CanvasRenderer:
   m_ObjectHideFlags: 0
