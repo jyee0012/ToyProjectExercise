@@ -38,6 +38,7 @@ public class FallingObject : MonoBehaviour
         
         if (playerNum == 1)
         {
+<<<<<<< HEAD
             //ScoreAndTimer.p1Score += score;
             ScoreAndTimer.AddScore(playerNum);
         }
@@ -45,6 +46,13 @@ public class FallingObject : MonoBehaviour
         {
             //ScoreAndTimer.p2Score += score;
             ScoreAndTimer.AddScore(playerNum);
+=======
+            ScoreStatics.p1Score += score;
+        }
+        else if( playerNum == 2)
+        {
+            ScoreStatics.p2Score += score;
+>>>>>>> a9c0f32e79ad32a7aab8754c913327186fc73795
         }
     }
     private void OnCollisionEnter(Collision collision)
