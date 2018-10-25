@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/TESTSCENEFORJANNIK.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/MainMenu.unity
+=======
+- path: Assets/Scenes/GameScene.unity
+>>>>>>> f3bfda19ef8b6fa671644e1a450449fa0ef1bae3
+>>>>>>> d847437db1a98859732694ef35206e811f825df4
   isLoaded: 1
   isActive: 1
