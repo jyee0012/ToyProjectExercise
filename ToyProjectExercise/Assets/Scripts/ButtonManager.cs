@@ -23,10 +23,10 @@ public class ButtonManager : MonoBehaviour {
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "GameScene")
+        if (SceneManager.GetActiveScene().name == "ResultsScreen")
         {
-            if (ScoreStatics.p2Active) scoreText.GetComponent<Text>().text = "Player 1 Score: " + ScoreStatics.p1Score.ToString();
-            else scoreText.GetComponent<Text>().text = "Your Score: " + ScoreStatics.p1Score.ToString() + "\nPlayer 2 Score: " + ScoreStatics.p2Score.ToString();
+            if (!ScoreStatics.p2Active) scoreText.GetComponent<Text>().text = "Your Score: " + ScoreStatics.p1Score.ToString();
+            else scoreText.GetComponent<Text>().text = "Player 1 Score: " + ScoreStatics.p1Score.ToString() + "\nPlayer 2 Score: " + ScoreStatics.p2Score.ToString();
         }
     }
 
