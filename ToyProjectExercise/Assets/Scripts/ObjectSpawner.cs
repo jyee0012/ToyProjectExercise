@@ -40,7 +40,24 @@ public class ObjectSpawner : MonoBehaviour {
             Vector3 spawnPos = transform.position;
             spawnPos += new Vector3(randSpawn - Mathf.RoundToInt(leftAnchor), 0, 0);
 
+            // spawn fall object
             GameObject currentFallObj = Instantiate(fallingObjects[randIndex], spawnPos, fallingObjects[randIndex].transform.rotation);
+            // if has scoretimer then do the following
+            if (scoreTimer != null)
+            {
+                // check if the object has the falling object script
+                FallingObject fallObjScript = currentFallObj.GetComponent<FallingObject>();
+                if (fallObjScript != null)
+                {
+                    // set the falling object's scoretimer to be the object spawner's scoretimer
+                    fallObjScript.scoreTimer = scoreTimer;
+                }
+                else
+                {
+                    // throw error if false
+                    Debug.Log(currentFallObj.name + " does not have FallingObject Script");
+                }
+            }
             Destroy(currentFallObj, destroyDelay);
 
             // reset timer
