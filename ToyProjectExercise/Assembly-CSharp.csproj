@@ -65,7 +65,6 @@
      <None Include="Assets\Cartoon Props Pack\Shaders\Diffuse_DoubleSided.shader" />
      <None Include="Assets\Cartoon Props Pack\ReadMe.txt" />
  <Reference Include="UnityEditor.StandardEvents">
-<<<<<<< HEAD
  <HintPath>C:/Users/dhildebrand11/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
@@ -76,18 +75,6 @@
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/dhildebrand11/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-=======
- <HintPath>C:/Users/gsharma9/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/gsharma9/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/gsharma9/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/gsharma9/Documents/GitHub/ToyProjectExercise/ToyProjectExercise/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
->>>>>>> f3bfda19ef8b6fa671644e1a450449fa0ef1bae3
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -285,17 +272,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
-<<<<<<< HEAD
  <HintPath>C:/Users/dhildebrand11/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/dhildebrand11/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-=======
- <HintPath>C:/Users/gsharma9/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.StandardEvents">
- <HintPath>C:/Users/gsharma9/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
->>>>>>> f3bfda19ef8b6fa671644e1a450449fa0ef1bae3
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
