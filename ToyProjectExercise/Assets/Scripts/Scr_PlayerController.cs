@@ -22,12 +22,14 @@ public class Scr_PlayerController : MonoBehaviour
     private float speed, jumpForce;
     [SerializeField]
     private int maxHP;
+    [SerializeField]
+    private GameObject child;
     private int health;
     private float vinput;
     private string vinputString;
     private KeyCode jump;
     [SerializeField]
-    private bool grounded;
+    private bool grounded, rotationEnabled;
     // Use this for initialization
     void Start()
     {
@@ -48,7 +50,7 @@ public class Scr_PlayerController : MonoBehaviour
                 {
                     gameObject.SetActive(true);
                 }
-                    break;
+                break;
             default:
                 break;
         }
@@ -65,6 +67,21 @@ public class Scr_PlayerController : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             grounded = false;
+        }
+        if (rotationEnabled)
+        {
+            if (vinput == 0)
+            {
+                child.transform.localEulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (vinput > 0)
+            {
+                child.transform.localEulerAngles = new Vector3(0, 90, 0);
+            }
+            else if (vinput < 0)
+            {
+                child.transform.localEulerAngles = new Vector3(0, 270, 0);
+            }
         }
     }
 
