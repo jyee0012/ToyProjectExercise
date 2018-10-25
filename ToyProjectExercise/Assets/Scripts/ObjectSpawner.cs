@@ -18,13 +18,13 @@ public class ObjectSpawner : MonoBehaviour {
     ScoreAndTimer scoreTimer;
     [SerializeField]
     bool canSpawn = true;
-    int fallingArrayMax;
+    int fallingArrayMax, randIndex, randSpawn;
     float timeStamp = 0;
 
 	// Use this for initialization
 	void Start () {
         // get array length
-        int fallingArrayMax = fallingObjects.Length;
+        fallingArrayMax = fallingObjects.Length;
 	}
 	
 	// Update is called once per frame
@@ -33,14 +33,32 @@ public class ObjectSpawner : MonoBehaviour {
         if (timeStamp < Time.time && canSpawn)
         {
             // each time spawn a random among the array
-            int randIndex = Random.Range(0, fallingArrayMax),  // random index for array element inside falling object array
-                randSpawn = Random.Range(0, Mathf.RoundToInt(leftAnchor + rightAnchor)); // random spawn location between left & right anchor, starting from left to right
-
+            randIndex = Random.Range(0, fallingArrayMax);  // random index for array element inside falling object array
+            randSpawn = Random.Range(0, Mathf.RoundToInt(leftAnchor + rightAnchor)); // random spawn location between left & right anchor, starting from left to right
+            //Debug.Log(randIndex + ":" + fallingArrayMax);
+            
             // get and modify spawn position
             Vector3 spawnPos = transform.position;
             spawnPos += new Vector3(randSpawn - Mathf.RoundToInt(leftAnchor), 0, 0);
 
+            // spawn fall object
             GameObject currentFallObj = Instantiate(fallingObjects[randIndex], spawnPos, fallingObjects[randIndex].transform.rotation);
+            // if has scoretimer then do the following
+            if (scoreTimer != null)
+            {
+                // check if the object has the falling object script
+                FallingObject fallObjScript = currentFallObj.GetComponent<FallingObject>();
+                if (fallObjScript != null)
+                {
+                    // set the falling object's scoretimer to be the object spawner's scoretimer
+                    fallObjScript.scoreTimer = scoreTimer;
+                }
+                else
+                {
+                    // throw error if false
+                    Debug.Log(currentFallObj.name + " does not have FallingObject Script");
+                }
+            }
             Destroy(currentFallObj, destroyDelay);
 
             // reset timer
