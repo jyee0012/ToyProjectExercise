@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreAndTimer : MonoBehaviour {
-    //Attach to Game Scene
     int currP1;
     int currP2;
     public static bool p2Active;
@@ -20,7 +19,7 @@ public class ScoreAndTimer : MonoBehaviour {
     public float timer;
 
     void Start () {
-        currP1 = 0;//first time setup of p1Score. Use if p1Score == -1 to check if a game has been played or not.
+        currP1 = 0;
         if (ScoreStatics.p2Active) currP2 = 0;
         else currP2 = -1;
         timer = 60.0f;
@@ -31,7 +30,7 @@ public class ScoreAndTimer : MonoBehaviour {
         {
             ScoreStatics.p1Score = currP1;
             ScoreStatics.p2Score = currP2;
-            SceneManager.LoadScene("GameOverScene");//Replace GameOverScene with name of scene that displays results.
+            SceneManager.LoadScene("ResultsScreen");
         }
         p1ScoreText.GetComponent<Text>().text = "Player 1 Score\n" + currP1.ToString();
         if (p2Active) p2ScoreText.GetComponent<Text>().text = "Player 2 Score\n" + currP2.ToString();
