@@ -13,6 +13,8 @@ public class FallingObject : MonoBehaviour
     [SerializeField]
     float fallSpeed = 2; // fall speed
 
+    public ScoreAndTimer scoreTimer;
+
     float defaultFallSpeed = 2; // default fall speed
     // Use this for initialization
     void Start()
@@ -29,7 +31,7 @@ public class FallingObject : MonoBehaviour
     {
         if (useCustomGravity)
         {
-            transform.Translate(new Vector3(0, fallSpeed, 0) * Time.deltaTime);
+            transform.Translate(new Vector3(0, -fallSpeed, 0) * Time.deltaTime);
         }
     }
     // adds points based on player, player num is required while there is a default score amount provided
@@ -38,21 +40,13 @@ public class FallingObject : MonoBehaviour
         
         if (playerNum == 1)
         {
-<<<<<<< HEAD
             //ScoreAndTimer.p1Score += score;
-            ScoreAndTimer.AddScore(playerNum);
+            scoreTimer.AddScore(playerNum);
         }
         else if( playerNum == 2)
         {
             //ScoreAndTimer.p2Score += score;
-            ScoreAndTimer.AddScore(playerNum);
-=======
-            ScoreStatics.p1Score += score;
-        }
-        else if( playerNum == 2)
-        {
-            ScoreStatics.p2Score += score;
->>>>>>> a9c0f32e79ad32a7aab8754c913327186fc73795
+            scoreTimer.AddScore(playerNum);
         }
     }
     private void OnCollisionEnter(Collision collision)
