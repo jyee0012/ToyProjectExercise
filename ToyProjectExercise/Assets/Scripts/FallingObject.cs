@@ -51,7 +51,7 @@ public class FallingObject : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.gameObject.layer == 9)
         {
             if (isBad)
             {
@@ -62,6 +62,7 @@ public class FallingObject : MonoBehaviour
                 int currentPlayer = collision.transform.GetComponent<Scr_PlayerController>().GetPlayer();
                 GivePoints(currentPlayer, scoreAmount);
             }
+            Destroy(gameObject);
         }
     }
 }
