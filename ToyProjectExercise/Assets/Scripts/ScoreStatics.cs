@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreStatics : MonoBehaviour {
+public static class ScoreStatics{
 
-    public static int p1Score;
-    public static int p2Score;
-    public static bool p2Active;
+    public static int p1Score = -1;
+    public static int p2Score = -1;
+    public static bool p2Active = false;
 }
