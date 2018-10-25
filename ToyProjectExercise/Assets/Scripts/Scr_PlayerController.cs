@@ -1,7 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+    Created by: Jannik Meyer
 
+    Edits:  Jannik Meyer: 2018-10-24:   created
+            Jannik Meyer: 2018-10-24:   added an if for activation on player 2
+                                        changed the collision to root collision
+
+     */
 public class Scr_PlayerController : MonoBehaviour
 {
     private enum Player
@@ -33,7 +40,15 @@ public class Scr_PlayerController : MonoBehaviour
             case Player.Player2:
                 vinputString = "Horizontalp2";
                 jump = KeyCode.UpArrow;
-                break;
+                if (!ScoreStatics.p2Active)
+                {
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
+                }
+                    break;
             default:
                 break;
         }

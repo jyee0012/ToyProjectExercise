@@ -23,6 +23,7 @@ public class ScoreAndTimer : MonoBehaviour {
         if (ScoreStatics.p2Active) currP2 = 0;
         else currP2 = -1;
         timer = 60.0f;
+
     }
 	void Update () {
         timer -= Time.deltaTime;
