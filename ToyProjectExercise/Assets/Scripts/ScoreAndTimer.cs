@@ -20,10 +20,8 @@ public class ScoreAndTimer : MonoBehaviour {
 
     void Start () {
         currP1 = 0;
-        if (ScoreStatics.p2Active) currP2 = 0;
-        else currP2 = -1;
+        currP2 = 0;
         timer = 60.0f;
-
     }
 	void Update () {
         timer -= Time.deltaTime;
@@ -34,7 +32,11 @@ public class ScoreAndTimer : MonoBehaviour {
             SceneManager.LoadScene("ResultsScreen");
         }
         p1ScoreText.GetComponent<Text>().text = "Player 1 Score\n" + currP1.ToString();
-        if (p2Active) p2ScoreText.GetComponent<Text>().text = "Player 2 Score\n" + currP2.ToString();
+        if (ScoreStatics.p2Active)
+        {
+            p2ScoreText.SetActive(true);
+            p2ScoreText.GetComponent<Text>().text = "Player 2 Score\n" + currP2.ToString();
+        }
         else p2ScoreText.SetActive(false);
         timeText.GetComponent<Text>().text = "Time remaining\n" + ((int)timer).ToString();
     }
