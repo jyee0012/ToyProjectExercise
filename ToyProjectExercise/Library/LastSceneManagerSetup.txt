@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/ResultsScreen.unity
+=======
 - path: Assets/Scenes/JamesTest.unity
+>>>>>>> 2e94737a5b32b55e9776c2ac027204a24349d7b2
   isLoaded: 1
   isActive: 1
