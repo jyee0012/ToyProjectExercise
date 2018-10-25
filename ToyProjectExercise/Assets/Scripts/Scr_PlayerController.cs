@@ -77,7 +77,7 @@ public class Scr_PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.transform.name);
-        if (collision.transform.name == "Floor")
+        if (collision.transform.root.name == "Floor")
         {
             grounded = true;
         }

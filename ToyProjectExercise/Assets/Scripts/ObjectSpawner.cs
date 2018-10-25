@@ -40,7 +40,7 @@ public class ObjectSpawner : MonoBehaviour {
             Vector3 spawnPos = transform.position;
             spawnPos += new Vector3(randSpawn - Mathf.RoundToInt(leftAnchor), 0, 0);
 
-            GameObject currentFallObj = Instantiate(fallingObjects[randIndex], spawnPos, Quaternion.identity);
+            GameObject currentFallObj = Instantiate(fallingObjects[randIndex], spawnPos, fallingObjects[randIndex].transform.rotation);
             Destroy(currentFallObj, destroyDelay);
 
             // reset timer
