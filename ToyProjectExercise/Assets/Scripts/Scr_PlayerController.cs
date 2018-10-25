@@ -44,6 +44,10 @@ public class Scr_PlayerController : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                 }
+                else
+                {
+                    gameObject.SetActive(true);
+                }
                     break;
             default:
                 break;
